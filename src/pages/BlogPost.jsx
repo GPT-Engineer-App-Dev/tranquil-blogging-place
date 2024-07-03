@@ -1,32 +1,16 @@
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-const Index = () => {
+const BlogPost = () => {
+  const { id } = useParams();
+
   return (
     <div className="flex flex-col lg:flex-row gap-4">
       <div className="flex-1">
         <header className="mb-4">
-          <h1 className="text-3xl font-bold">Welcome to My Blog</h1>
-          <p className="text-muted-foreground">A place to share my thoughts and experiences.</p>
+          <h1 className="text-3xl font-bold">Blog Post Title {id}</h1>
         </header>
         <main>
-          <h2 className="text-2xl font-semibold mb-4">Recent Posts</h2>
-          <ul className="space-y-4">
-            <li>
-              <h3 className="text-xl font-semibold">Post Title 1</h3>
-              <p className="text-muted-foreground">This is a short excerpt of the first post...</p>
-              <Link to="/post/1" className="text-primary hover:underline">Read More</Link>
-            </li>
-            <li>
-              <h3 className="text-xl font-semibold">Post Title 2</h3>
-              <p className="text-muted-foreground">This is a short excerpt of the second post...</p>
-              <Link to="/post/2" className="text-primary hover:underline">Read More</Link>
-            </li>
-            <li>
-              <h3 className="text-xl font-semibold">Post Title 3</h3>
-              <p className="text-muted-foreground">This is a short excerpt of the third post...</p>
-              <Link to="/post/3" className="text-primary hover:underline">Read More</Link>
-            </li>
-          </ul>
+          <p className="text-muted-foreground">This is the full content of blog post {id}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque leo nec libero fermentum, a tincidunt nulla facilisis. Integer nec magna sit amet arcu tincidunt tincidunt.</p>
         </main>
       </div>
       <aside className="w-full lg:w-1/3">
@@ -56,4 +40,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default BlogPost;
